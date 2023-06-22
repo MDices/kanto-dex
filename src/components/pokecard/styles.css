@@ -1,0 +1,221 @@
+.pokeName {
+  text-transform: capitalize;
+  font-weight: bold !important;
+  font-size: 100;
+}
+
+.grass {
+  background-color: #78C850;
+  color: #fff;
+  font-size: 14px !important;
+  text-transform: uppercase;
+  width: 85px;
+  border-radius: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.poison {
+  background-color: #A040A0;
+  color: #fff;
+  font-size: 14px !important;
+  text-transform: uppercase;
+  width: 85px;
+  border-radius: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fire {
+  background-color: #E87A3D;
+  color: #fff;
+  font-size: 14px !important;
+  text-transform: uppercase;
+  width: 85px;
+  border-radius: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flying {
+  background-color: #90AAD7;
+  color: #fff;
+  font-size: 14px !important;
+  text-transform: uppercase;
+  width: 85px;
+  border-radius: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.water {
+  background-color: #639CE4;
+  color: #fff;
+  font-size: 14px !important;
+  text-transform: uppercase;
+  width: 85px;
+  border-radius: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.bug {
+  background-color: #ACC23E;
+  color: #fff;
+  font-size: 14px !important;
+  text-transform: uppercase;
+  width: 85px;
+  border-radius: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.normal {
+  background-color: #ACAD99;
+  color: #fff;
+  font-size: 14px !important;
+  text-transform: uppercase;
+  width: 85px;
+  border-radius: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.electric {
+  background-color: #E7C536;
+  color: #fff;
+  font-size: 14px !important;
+  text-transform: uppercase;
+  width: 85px;
+  border-radius: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ground {
+  background-color: #CEB250;
+  color: #fff;
+  font-size: 14px !important;
+  text-transform: uppercase;
+  width: 85px;
+  border-radius: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fairy {
+  background-color: #E8B0EB;
+  color: #fff;
+  font-size: 14px !important;
+  text-transform: uppercase;
+  width: 85px;
+  border-radius: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fighting {
+  background-color: #C45D4C;
+  color: #fff;
+  font-size: 14px !important;
+  text-transform: uppercase;
+  width: 85px;
+  border-radius: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.psychic {
+  background-color: #E96C95;
+  color: #fff;
+  font-size: 14px !important;
+  text-transform: uppercase;
+  width: 85px;
+  border-radius: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.rock {
+  background-color: #BAA85E;
+  color: #fff;
+  font-size: 14px !important;
+  text-transform: uppercase;
+  width: 85px;
+  border-radius: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.steel {
+  background-color: #9FA9AF;
+  color: #fff;
+  font-size: 14px !important;
+  text-transform: uppercase;
+  width: 85px;
+  border-radius: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ice {
+  background-color: #81CFD7;
+  color: #fff;
+  font-size: 14px !important;
+  text-transform: uppercase;
+  width: 85px;
+  border-radius: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.ghost {
+  background-color: #816DB6;
+  color: #fff;
+  font-size: 14px !important;
+  text-transform: uppercase;
+  width: 85px;
+  border-radius: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dragon {
+  background-color: #8572C8;
+  color: #fff;
+  font-size: 14px !important;
+  text-transform: uppercase;
+  width: 85px;
+  border-radius: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.dark {
+  background-color: #79726B;
+  color: #fff;
+  font-size: 14px !important;
+  text-transform: uppercase;
+  width: 85px;
+  border-radius: 14px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
