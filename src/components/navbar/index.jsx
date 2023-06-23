@@ -65,7 +65,7 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 export default function Navbar({ pokeSearches }) {
   const classes = useStyles();
   return (
-    <Box sx={{ flexGrow: 1, marginBottom: "4em" }}>
+    <Box sx={{ flexGrow: 1, marginBottom: "2em" }}>
       <AppBar position="static" sx={{ backgroundColor: "#46166B" }}>
         <Toolbar>
           <Box display="flex" justifyContent="space-between" width="100%">

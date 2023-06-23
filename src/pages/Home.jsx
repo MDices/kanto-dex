@@ -3,7 +3,7 @@ import { Container } from '@mui/system'
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import Navbar from '../components/navbar'
-import PokeCard from '../components/pokecard'
+import PokeCard from '../components/Pokecard'
 import ScrollToTopButton from '../components/ScrollToTopButton';
 import { IconButton, ButtonGroup } from '@material-ui/core';
 import { FilterList } from '@material-ui/icons';
@@ -87,7 +87,7 @@ export const Home = () => {
   return (
     <div>
       <Navbar pokeSearches={pokeSearches}></Navbar>
-      <Box marginBottom={10}>
+      <Box marginBottom={2}>
         <div
           style={{
             overflowX: 'auto',
@@ -245,9 +245,9 @@ export const Home = () => {
       <Box>
         <Container maxWidth="false" sx={{ marginTop: "30px" }}>
 
-          <Grid container spacing={12} justify="center">
+          <Grid container spacing={2} justify="center">
             {pokelist.map((poke, key) => (
-              <Grid item xs={12} sm={4} md={2} key={key} alignItems="center" pl={{ xs: 2, sm: 0 }}>
+              <Grid item xs={12} sm={4} md={6} lg={2} key={key} alignItems="center" pl={{ xs: 2, sm: 0 }}>
                 <PokeCard name={poke.data.name} image={poke.data.sprites.front_default} types={poke.data.types}></PokeCard>
               </Grid>
             ))
