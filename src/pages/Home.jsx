@@ -3,7 +3,7 @@ import { Container } from '@mui/system'
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import Navbar from '../components/navbar'
-import PokeCard from '../components/Pokecard'
+import PokeCard from '../components/Card'
 import ScrollToTopButton from '../components/ScrollToTopButton';
 import { IconButton, ButtonGroup } from '@material-ui/core';
 import { FilterList } from '@material-ui/icons';
