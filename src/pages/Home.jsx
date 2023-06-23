@@ -6,9 +6,9 @@ import Navbar from '../components/navbar'
 import PokeCard from '../components/pokecard'
 import ScrollToTopButton from '../components/ScrollToTopButton';
 import { IconButton, ButtonGroup } from '@material-ui/core';
-import { FilterList, Whatshot, Waves, FlashOn, Title } from '@material-ui/icons';
+import { FilterList } from '@material-ui/icons';
 import { BugReport, Brightness7, Bolt, Flare, SportsMma, LocalFireDepartment, Air, Deblur, Forest, Terrain, AcUnit, Hive, Opacity, Psychology, AllOut, ViewTimeline, Tsunami } from '@mui/icons-material';
-import styled from '@emotion/styled'
+import './styles.css';
 
 
 
@@ -16,7 +16,7 @@ import styled from '@emotion/styled'
 export const Home = () => {
   const [pokelist, setPokelist] = useState([])
   const [allpoke, setAllPoke] = useState([])
-
+  const [selectedType, setSelectedType] = useState(null);
 
   useEffect(() => {
     getPokemon();
@@ -42,7 +42,7 @@ export const Home = () => {
 
   const handleTypeChange = (types) => {
     var pokeArray = [];
-
+    setSelectedType(types)
     if (types === "" || types === "all") {
       getPokemon()
     }
@@ -88,135 +88,159 @@ export const Home = () => {
     <div>
       <Navbar pokeSearches={pokeSearches}></Navbar>
       <Box marginBottom={10}>
-        <ButtonGroup variant="contained">
-          <IconButton
-            onClick={() => handleTypeChange('all')}
+        <div
+          style={{
+            overflowX: 'auto',
+            height: '50px',
+            justifyContent: 'center', // Alinha os botões horizontalmente no centro
+            alignItems: 'center', // Alinha os botões verticalmente no centro
+            minWidth: '100%',
+            position: 'relative', // Adicione esta propriedade para aplicar o estilo ao scroll
 
+            // Estilo para o scroll horizontal
+            '&::-webkit-scrollbar': {
+              height: '8px',
+              backgroundColor: 'transparent', // Define a cor de fundo do scroll como transparente
+            },
+            '&::-webkit-scrollbar-thumb': {
+              borderRadius: '8px',
+              backgroundColor: 'rgba(0, 0, 0, 0.2)', // Define a cor do scroll como um tom de cinza transparente
+            },
+          }}
+        >
+          <ButtonGroup variant="contained"
           >
-            <FilterList />
-          </IconButton>
-          <IconButton
-            onClick={() => handleTypeChange('bug')}
-          >
-            <BugReport sx={{ color: '#ACC23E' }} />
-          </IconButton>
+            <IconButton
+              onClick={() => handleTypeChange('all')}
+            >
+              <FilterList />
+            </IconButton>
+            <IconButton
+              onClick={() => handleTypeChange('bug')
+              } className={selectedType === 'bug' ? 'selected-bug' : ''}
+            >
+              <BugReport className={selectedType === 'bug' ? 'selected-icon' : ''} sx={{ color: '#ACC23E' }} />
+            </IconButton>
 
-          <IconButton
-            onClick={() => handleTypeChange('dragon')}
+            <IconButton
+              onClick={() => handleTypeChange('dragon')}
+              className={selectedType === 'dragon' ? 'selected-dragon' : ''}
 
-          >
-            <Brightness7 sx={{ color: '#8572C8' }} />
-          </IconButton>
+            >
+              <Brightness7 className={selectedType === 'dragon' ? 'selected-icon' : ''} sx={{ color: '#8572C8' }} />
+            </IconButton>
 
-          <IconButton
-            onClick={() => handleTypeChange('electric')}
+            <IconButton
+              onClick={() => handleTypeChange('electric')}
+              className={selectedType === 'electric' ? 'selected-electric' : ''}
 
-          >
-            <Bolt sx={{ color: '#E7C536' }} />
-          </IconButton>
+            >
+              <Bolt className={selectedType === 'electric' ? 'selected-icon' : ''} sx={{ color: '#E7C536' }} />
+            </IconButton>
 
-          <IconButton
-            onClick={() => handleTypeChange('fairy')}
+            <IconButton
+              onClick={() => handleTypeChange('fairy')}
+              className={selectedType === 'fairy' ? 'selected-fairy' : ''}
+            >
+              <Flare className={selectedType === 'fairy' ? 'selected-icon' : ''} sx={{ color: '#E8B0EB' }} />
+            </IconButton>
 
-          >
-            <Flare sx={{ color: '#E8B0EB' }} />
-          </IconButton>
+            <IconButton
+              onClick={() => handleTypeChange('fighting')}
+              className={selectedType === 'fighting' ? 'selected-fighting' : ''}
+
+            >
+              <SportsMma className={selectedType === 'fighting' ? 'selected-icon' : ''} sx={{ color: '#C45D4C' }} />
+            </IconButton>
+
+            <IconButton
+              onClick={() => handleTypeChange('fire')}
+              className={selectedType === 'fire' ? 'selected-fire' : ''}
+            >
+              <LocalFireDepartment className={selectedType === 'fire' ? 'selected-icon' : ''} sx={{ color: '#E87A3D' }} />
+            </IconButton>
+
+            <IconButton
+              onClick={() => handleTypeChange('flying')}
+              className={selectedType === 'flying' ? 'selected-flying' : ''}
+
+            >
+              <Air className={selectedType === 'flying' ? 'selected-icon' : ''} sx={{ color: '#90AAD7' }} />
+            </IconButton>
+
+            <IconButton
+              onClick={() => handleTypeChange('ghost')}
+              className={selectedType === 'ghost' ? 'selected-ghost' : ''}
+            >
+              <Deblur className={selectedType === 'ghost' ? 'selected-icon' : ''} sx={{ color: '#816DB6' }} />
+            </IconButton>
+
+            <IconButton
+              onClick={() => handleTypeChange('grass')}
+              className={selectedType === 'grass' ? 'selected-grass' : ''}
+            >
+              <Forest className={selectedType === 'grass' ? 'selected-icon' : ''} sx={{ color: '#78C850' }} />
+            </IconButton>
+
+            <IconButton
+              onClick={() => handleTypeChange('ground')}
+              className={selectedType === 'ground' ? 'selected-ground' : ''}
+            >
+              <Terrain className={selectedType === 'ground' ? 'selected-icon' : ''} sx={{ color: '#CEB250' }} />
+            </IconButton>
+
+            <IconButton
+              onClick={() => handleTypeChange('ice')}
+              className={selectedType === 'ice' ? 'selected-ice' : ''}
+            >
+              <AcUnit className={selectedType === 'ice' ? 'selected-icon' : ''} sx={{ color: '#81CFD7' }} />
+            </IconButton>
+
+            <IconButton
+              onClick={() => handleTypeChange('normal')}
+              className={selectedType === 'normal' ? 'selected-normal' : ''}
+            >
+              <Hive className={selectedType === 'normal' ? 'selected-icon' : ''} sx={{ color: '#ACAD99' }} />
+            </IconButton>
+
+            <IconButton
+              onClick={() => handleTypeChange('poison')}
+              className={selectedType === 'poison' ? 'selected-poison' : ''}
+            >
+              <Opacity className={selectedType === 'poison' ? 'selected-icon' : ''} sx={{ color: '#A040A0' }} />
+            </IconButton>
+
+            <IconButton
+              onClick={() => handleTypeChange('psychic')}
+              className={selectedType === 'psychic' ? 'selected-psychic' : ''}
+            >
+              <Psychology className={selectedType === 'psychic' ? 'selected-icon' : ''} sx={{ color: '#E96C95' }} />
+            </IconButton>
+
+            <IconButton
+              onClick={() => handleTypeChange('rock')}
+              className={selectedType === 'rock' ? 'selected-rock' : ''}
+            >
+              <AllOut className={selectedType === 'rock' ? 'selected-icon' : ''} sx={{ color: '#BAA85E' }} />
+            </IconButton>
+
+            <IconButton
+              onClick={() => handleTypeChange('steel')}
+              className={selectedType === 'steel' ? 'selected-steel' : ''}
+            >
+              <ViewTimeline className={selectedType === 'steel' ? 'selected-icon' : ''} sx={{ color: '#9FA9AF' }} />
+            </IconButton>
+
+            <IconButton
+              onClick={() => handleTypeChange('water')}
+              className={selectedType === 'water' ? 'selected-water' : ''}
+            >
+              <Tsunami className={selectedType === 'water' ? 'selected-icon' : ''} sx={{ color: '#639CE4' }} />
+            </IconButton>
 
 
-
-          <IconButton
-            onClick={() => handleTypeChange('fighting')}
-
-          >
-            <SportsMma sx={{ color: '#C45D4C' }} />
-          </IconButton>
-
-          <IconButton
-            onClick={() => handleTypeChange('fire')}
-
-          >
-            <LocalFireDepartment sx={{ color: '#E87A3D' }} />
-          </IconButton>
-
-          <IconButton
-            onClick={() => handleTypeChange('flying')}
-
-          >
-            <Air sx={{ color: '#90AAD7' }} />
-          </IconButton>
-
-          <IconButton
-            onClick={() => handleTypeChange('ghost')}
-
-          >
-            <Deblur sx={{ color: '#816DB6' }} />
-          </IconButton>
-
-          <IconButton
-            onClick={() => handleTypeChange('grass')}
-
-          >
-            <Forest sx={{ color: '#78C850' }} />
-          </IconButton>
-
-          <IconButton
-            onClick={() => handleTypeChange('ground')}
-
-          >
-            <Terrain sx={{ color: '#CEB250' }} />
-          </IconButton>
-
-          <IconButton
-            onClick={() => handleTypeChange('ice')}
-
-          >
-            <AcUnit sx={{ color: '#81CFD7' }} />
-          </IconButton>
-
-          <IconButton
-            onClick={() => handleTypeChange('normal')}
-
-          >
-            <Hive sx={{ color: '#ACAD99' }} />
-          </IconButton>
-
-          <IconButton
-            onClick={() => handleTypeChange('poison')}
-
-          >
-            <Opacity sx={{ color: '#A040A0' }} />
-          </IconButton>
-
-          <IconButton
-            onClick={() => handleTypeChange('psychic')}
-
-          >
-            <Psychology sx={{ color: '#E96C95' }} />
-          </IconButton>
-
-          <IconButton
-            onClick={() => handleTypeChange('rock')}
-
-          >
-            <AllOut sx={{ color: '#BAA85E' }} />
-          </IconButton>
-
-          <IconButton
-            onClick={() => handleTypeChange('steel')}
-
-          >
-            <ViewTimeline sx={{ color: '#9FA9AF' }} />
-          </IconButton>
-
-          <IconButton
-            onClick={() => handleTypeChange('water')}
-
-          >
-            <Tsunami sx={{ color: '#639CE4' }} />
-          </IconButton>
-
-
-        </ButtonGroup>
+          </ButtonGroup>
+        </div>
       </Box>
       <Box>
         <Container maxWidth="false" sx={{ marginTop: "30px" }}>

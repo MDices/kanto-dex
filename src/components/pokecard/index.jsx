@@ -25,12 +25,12 @@ export default function PokeCard({ name, image, types }) {
   }
   return (
 
-    <Box pl={{ xs: 4, sm: 0 }}>
-      <Card sx={{ maxWidth: 345, marginBottom: 2.5 }} >
+    <Box sx={{ width: '100%' }}>
+      <Card sx={{ width: '100%', maxHeight: '100%', marginBottom: 2.5 }} >
 
         <CardMedia
           className={classes.cardMedia}
-          sx={{ maxWidth: 345, }}
+          sx={{ width: '100%' }}
           image={image}
           title={name}
 
