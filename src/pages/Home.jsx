@@ -9,14 +9,16 @@ import { IconButton, ButtonGroup } from '@material-ui/core';
 import { FilterList } from '@material-ui/icons';
 import { BugReport, Brightness7, Bolt, Flare, SportsMma, LocalFireDepartment, Air, Deblur, Forest, Terrain, AcUnit, Hive, Opacity, Psychology, AllOut, ViewTimeline, Tsunami } from '@mui/icons-material';
 import './styles.css';
+import { useNavigate } from 'react-router-dom'
 
 
 
 
-export const Home = () => {
+export const Home = ({ setPokemonData }) => {
   const [pokelist, setPokelist] = useState([])
   const [allpoke, setAllPoke] = useState([])
   const [selectedType, setSelectedType] = useState(null);
+  const navigate = useNavigate()
 
   useEffect(() => {
     getPokemon();
@@ -70,18 +72,28 @@ export const Home = () => {
 
   const pokeSearches = (name) => {
     var pokeArray = [];
+
     if (name === "") {
+      setSelectedType('all')
       getPokemon()
     }
-    for (var i in pokelist) {
-      if (pokelist[i].data.name.includes(name)) {
-        pokeArray.push(pokelist[i])
+    else {
+      const lowercaseName = name.toLowerCase();
+
+      for (var i in pokelist) {
+        if (pokelist[i].data.name.includes(lowercaseName)) {
+          pokeArray.push(pokelist[i]);
+        }
       }
     }
 
     setPokelist(pokeArray);
   }
 
+  const selectPokemon = (pokemonData) => {
+    setPokemonData(pokemonData)
+    navigate("/profile")
+  }
 
 
   return (
@@ -108,7 +120,11 @@ export const Home = () => {
             },
           }}
         >
-          <ButtonGroup variant="contained"
+          <ButtonGroup
+            variant="contained"
+            sx={{
+              borderRadius: '0px', // Defina o valor de border radius desejado
+            }}
           >
             <IconButton
               onClick={() => handleTypeChange('all')}
@@ -248,7 +264,11 @@ export const Home = () => {
           <Grid container spacing={2} justify="center">
             {pokelist.map((poke, key) => (
               <Grid item xs={12} sm={4} md={6} lg={2} key={key} alignItems="center" pl={{ xs: 2, sm: 0 }}>
-                <PokeCard name={poke.data.name} image={poke.data.sprites.front_default} types={poke.data.types}></PokeCard>
+                <Box onClick={() => selectPokemon(poke)}>
+
+                  <PokeCard name={poke.data.name} image={poke.data.sprites.front_default} types={poke.data.types} id={poke.data.id}></PokeCard>
+                </Box>
+
               </Grid>
             ))
             }

@@ -7,6 +7,7 @@ import CardMedia from '@mui/material/CardMedia';
 import './styles.css';
 import Typography from '@mui/material/Typography';
 import { makeStyles } from '@material-ui/core/styles';
+import { Grid } from '@mui/material';
 
 const useStyles = makeStyles((theme) => ({
   cardMedia: {
@@ -17,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function PokeCard({ name, image, types }) {
+export default function PokeCard({ name, image, types, id }) {
   const classes = useStyles();
   let secondType
   if (types[1]) {
@@ -25,20 +26,21 @@ export default function PokeCard({ name, image, types }) {
   }
   return (
 
-    <Box sx={{ width: '100%' }}>
-      <Card sx={{ width: '100%', maxHeight: '100%', marginBottom: 2.5 }} >
-
-        <CardMedia
-          className={classes.cardMedia}
-          sx={{ width: '100%' }}
-          image={image}
-          title={name}
-
-
-        />
-
+    <Box sx={{ width: '100%', cursor: 'pointer' }}>
+      <Card sx={{ width: '100%', maxHeight: '100%', marginBottom: 2 }} >
+        <Box align="center" paddingTop="15px">
+          <CardMedia
+            className={classes.cardMedia}
+            sx={{ width: '200px' }}
+            image={image}
+            title={name}
+          />
+        </Box>
         <CardContent>
-          <Typography className="pokeName" gutterBottom variant="h5" component="div">
+          <Box className="dexNumber" align="left" paddingBottom="5px">
+            {'Nº '}{id < 10 ? '00' + id : id < 100 ? '0' + id : id}
+          </Box>
+          <Typography className="pokeName" gutterBottom variant="h5" component="div" paddingBottom="2px">
             {name}
           </Typography>
           <Box display="flex" justifyContent="space-around" width="100%">

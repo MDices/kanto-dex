@@ -4,6 +4,13 @@
   font-size: 100;
 }
 
+.dexNumber {
+  color: #919191;
+  font-size: 14px;
+  letter-spacing: 0.5;
+  font-weight: bold;
+}
+
 .grass {
   background-color: #78C850;
   color: #fff;

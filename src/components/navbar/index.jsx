@@ -8,6 +8,7 @@ import InputBase from '@mui/material/InputBase';
 
 import SearchIcon from '@mui/icons-material/Search';
 import { makeStyles } from '@material-ui/core/styles';
+import { useNavigate } from 'react-router-dom';
 
 const useStyles = makeStyles((theme) => ({
   inputBase: {
@@ -62,36 +63,32 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
   },
 }));
 
-export default function Navbar({ pokeSearches }) {
+export default function Navbar({ pokeSearches, hideSearch }) {
   const classes = useStyles();
+  const navigate = useNavigate()
   return (
     <Box sx={{ flexGrow: 1, marginBottom: "2em" }}>
       <AppBar position="static" sx={{ backgroundColor: "#46166B" }}>
         <Toolbar>
           <Box display="flex" justifyContent="space-between" width="100%">
-            <Box component="img" src="/assets/logos/kanto-logo.png" width="80px">
+            <Box component="img" src="/assets/logos/kanto-logo.png" width="80px" sx={{ cursor: "pointer" }} onClick={() => navigate("/")}>
             </Box>
-            {/* <Typography
-              variant="h6"
-              noWrap
-              align="left"
-              component="div"
-              sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
-            >
-              KantoDex
-            </Typography> */}
-            <Search sx={{ marginTop: 1.5 }} onChange={(e) => pokeSearches(e.target.value)}>
-              <SearchIconWrapper>
-                <SearchIcon />
-              </SearchIconWrapper>
-              <StyledInputBase classes={{
-                root: classes.inputBase,
-              }}
 
-                placeholder="Search…"
-                inputProps={{ 'aria-label': 'search' }}
-              />
-            </Search>
+            {!hideSearch && (
+              <Search sx={{ marginTop: 1.5 }} onChange={(e) => pokeSearches(e.target.value)}>
+                <SearchIconWrapper>
+                  <SearchIcon />
+                </SearchIconWrapper>
+                <StyledInputBase classes={{
+                  root: classes.inputBase,
+                }}
+
+                  placeholder="Search…"
+                  inputProps={{ 'aria-label': 'search' }}
+                />
+              </Search>
+            )}
+
           </Box>
         </Toolbar>
       </AppBar>
