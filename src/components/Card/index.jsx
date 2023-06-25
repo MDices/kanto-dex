@@ -11,9 +11,12 @@ import { Grid } from '@mui/material';
 
 const useStyles = makeStyles((theme) => ({
   cardMedia: {
-    height: 300, // Defina a altura desejada para dispositivos móveis
-    [theme.breakpoints.up('sm')]: {
+    height: 350, // Defina a altura desejada para dispositivos móveis
+    [theme.breakpoints.up('md')]: {
       height: 200, // Defina a altura desejada para dispositivos maiores que sm
+    },
+    [theme.breakpoints.up('lg')]: {
+      height: 250, // Defina a altura desejada para dispositivos maiores que sm
     },
   },
 }));
@@ -31,7 +34,7 @@ export default function PokeCard({ name, image, types, id }) {
         <Box align="center" paddingTop="15px">
           <CardMedia
             className={classes.cardMedia}
-            sx={{ width: '200px' }}
+
             image={image}
             title={name}
           />

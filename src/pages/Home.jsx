@@ -264,8 +264,7 @@ export const Home = ({ setPokemonData }) => {
           <Grid container spacing={2} justify="center">
             {pokelist.map((poke, key) => (
               <Grid item xs={12} sm={4} md={6} lg={2} key={key} alignItems="center" pl={{ xs: 2, sm: 0 }}>
-                <Box onClick={() => selectPokemon(poke)}>
-
+                <Box onClick={() => selectPokemon(poke.data)}>
                   <PokeCard name={poke.data.name} image={poke.data.sprites.front_default} types={poke.data.types} id={poke.data.id}></PokeCard>
                 </Box>
 
