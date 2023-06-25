@@ -17,7 +17,7 @@ Interface intuitiva e responsiva.
 
 # Pré-requisitos
 Node.js.\
-NPM (Node Package Manager) ou Yarn.\
+NPM (Node Package Manager) ou Yarn.
 
 # Instalação
 Execute o comando npm install ou yarn install para instalar as dependências.
