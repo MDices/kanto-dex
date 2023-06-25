@@ -1,5 +1,5 @@
 # KantoDex
-[KantoDex](https://kanto-dex.vercel.app) é um projeto que traz uma Pokedex completa dos 151 Pokémon da região de Kanto, a primeira geração da franquia Pokémon. O objetivo do projeto é utilizar a PokeAPI para obter informações detalhadas de cada Pokémon e apresentá-las de forma acessível e interativa.
+[KantoDex](https://kanto-dex.vercel.app) é um projeto que traz uma Pokedex completa dos 151 Pokémon da região de Kanto, a primeira geração da franquia Pokémon. O objetivo do projeto é utilizar a [PokeAPI](https://pokeapi.co) para obter informações detalhadas de cada Pokémon e apresentá-las de forma acessível e interativa.
 
 # Tecnologias Utilizadas
 React.\
